@@ -106,6 +106,11 @@ async def delete_student(student_id: str):
 def health_check():
     return {"status": "ok"}
 
+@app.get("/")
+async def read_root():
+    return {"message": "Welcome to the Student Management API"}
+
+
 
 # Run the app
 if __name__ == "__main__":
