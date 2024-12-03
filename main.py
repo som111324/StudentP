@@ -102,6 +102,11 @@ async def delete_student(student_id: str):
         raise HTTPException(status_code=404, detail="Student not found")
     return None
 
+@app.get("/healthz")
+def health_check():
+    return {"status": "ok"}
+
+
 # Run the app
 if __name__ == "__main__":
     import uvicorn
